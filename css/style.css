@@ -16,6 +16,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
+    font-size: 1.3rem;
 }
 
 /* Variable */
@@ -23,8 +24,8 @@ body {
 /* general */
 .square {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: var(--gray-color);
     cursor: pointer;
     border: none;transition: background-color 0.2s;
@@ -86,7 +87,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
 }
 #score p {
     color: white;
