@@ -1,0 +1,128 @@
+:root {
+    --primary-color: yellowgreen;
+    --green-color: #2ecc71;
+    --red-color: #e74c3c;
+    --gray-color: #ecf0f1;
+    --font-freckle: 'Freckle Face', cursive;
+
+}
+body {
+    font-family: Roboto;
+    background-image: url("https://images.unsplash.com/photo-1583745275894-8ae47d6d553a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Variable */
+
+/* general */
+.square {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: var(--gray-color);
+    cursor: pointer;
+    border: none;transition: background-color 0.2s;
+
+}
+
+.bgBlue {
+    background-color: blue;
+}
+
+.bgRed {
+    background-color: red;
+}
+
+.bgYellow {
+    background-color: yellow;
+}
+
+.bgGreen {
+    background-color: green;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+/* Color */
+.color-red {
+    color: var(--red-color);
+}
+
+/* Button */
+.btn {
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: var(--green-color);
+}
+.btn:hover {
+    opacity: 0.8;
+}
+/* div app */
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Game title */
+#gameTitle {
+    font-family: var(--font-freckle);
+    font-size: 3rem;
+    color: white;
+}
+/* div score */
+#score {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+#score p {
+    color: white;
+}
+
+#score i {
+    color: var(--gray-color);
+}
+
+/* Squares */
+.squares {
+    padding: 5px;
+    transition: border 0.8s;
+}
+.squaresGreen {
+    border: solid 7px var(--green-color);
+    border-radius: 5px;
+}
+.squaresRed {
+    border: solid 7px var(--red-color);
+    border-radius: 5px;
+}
+
+/* lostGame */
+.lostGameSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: solid 2px var(--gray-color);
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+.lost {
+    font-size: 2.5rem;
+    font-family: var(--font-freckle);
+}

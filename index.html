@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeu du Simon</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/132e9b7f85.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="gameTitle">Jeu du simon</h1>
+      <button class="btn btn-primary" @click="newGame">Nouvelle Partie</button>
+      <hr />
+      <div id="score">
+        <p v-show="bestScore"><i class="fas fa-trophy"></i> <span class="font-weight-bold">Meilleur score</span>: {{ bestScore }}</span></p>
+        <p><span class="font-weight-bold">Score</span>: {{ score }}</span></p>
+      </div>
+      <hr />
+      <div v-if="displaySquares" class="squares" :class="{ squaresRed: gamePlay && computerPlay , squaresGreen: gamePlay && playerPlay}">
+        <div>
+          <button class="square" @click="addElementToPlayerSequence('topLeft')" :class="{ bgBlue: topLeft}" :disabled="computerPlay" @mousedown="switchOnOneSquare('topLeft')" @mouseup="switchOffOneSquare('topLeft')"></button>
+          <button class="square" @click="addElementToPlayerSequence('topRight')" :class="{ bgYellow: topRight}" :disabled="computerPlay" @mousedown="switchOnOneSquare('topRight')" @mouseup="switchOffOneSquare('topRight')"></button>
+        </div>
+        <div>
+          <button class="square" @click="addElementToPlayerSequence('downLeft')" :class="{ bgRed: downLeft}" :disabled="computerPlay" @mousedown="switchOnOneSquare('downLeft')" @mouseup="switchOffOneSquare('downLeft')"></button>
+          <button class="square" @click="addElementToPlayerSequence('downRight')" :class="{ bgGreen: downRight}" :disabled="computerPlay" @mousedown="switchOnOneSquare('downRight')" @mouseup="switchOffOneSquare('downRight')"></button>
+        </div>
+      </div>
+      <div v-else class="lostGameSection">
+        <span class="lost">Perdu !!!</span>
+        <p>Votre score est de {{ score }} {{ writePoint }}.</p>
+        <button @click="newGame()" class="btn btn-primary">REJOUER</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="./Js/index.js"></script>
+  </body>
+</html>
